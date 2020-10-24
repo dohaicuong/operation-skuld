@@ -1,0 +1,17 @@
+{
+  "name": "operation-skuld",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only --no-notify src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "apollo-server": "^2.18.2",
+    "graphql": "^15.3.0"
+  }
+}
