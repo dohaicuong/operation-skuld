@@ -1,3 +1,4 @@
+import { createContext } from "vm";
 import { Context } from "./index";
 
 export default {
@@ -15,5 +16,14 @@ export default {
       ctx.posts.push(newPost)
       return newPost
     },
+  },
+  Post: {
+    captializedTitle: (root: any) => {
+      return root.title.toUpperCase()
+    },
+    comments: (root: any, _args: any, ctx: Context) => {
+      const commentIds = ctx.posts.find(post => post.id === root.id)?.commentIds
+      return ctx.comments.filter(comment => commentIds?.includes(comment.id))
+    }
   }
 }

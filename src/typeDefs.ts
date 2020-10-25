@@ -6,6 +6,7 @@ export default gql`
     title: String!
     content: String
     comments: [Comment!]
+    captializedTitle: String!
   }
 
   type Comment {
