@@ -5,10 +5,10 @@ export type Post = {
   commentIds?: string[]
 }
 export const posts: Post[] = [
-  { id: 'POST_1', title: 'Hello GraphQL', content: '...' },
-  { id: 'POST_2', title: 'Hello GraphQL', content: '...', commentIds: ['COMMENT_1', 'COMMENT_2'] },
-  { id: 'POST_3', title: 'Hello GraphQL', content: '...' },
-  { id: 'POST_4', title: 'Hello GraphQL', commentIds: ['COMMENT_3'] },
+  { id: 'POST_1', title: 'Travel ban', content: 'Travel is not allowed because of COVID-19' },
+  { id: 'POST_2', title: 'From zero to hero GraphQL in 60 minutes', content: 'Absolutely that is the truth', commentIds: ['COMMENT_1', 'COMMENT_2'] },
+  { id: 'POST_3', title: 'WIP GraphQL resolver'},
+  { id: 'POST_4', title: 'Your feedback on GraphQL', commentIds: ['COMMENT_3'] },
 ]
 
 export type Comment = {
@@ -17,9 +17,9 @@ export type Comment = {
   authorId: string
 }
 export const comments: Comment[] = [
-  { id: 'COMMENT_1', content: 'hahaha', authorId: 'USER_1' },
-  { id: 'COMMENT_2', content: 'hahaha', authorId: 'USER_2' },
-  { id: 'COMMENT_3', content: 'hahaha', authorId: 'USER_3' },
+  { id: 'COMMENT_1', content: 'I want to flight again :/', authorId: 'USER_1' },
+  { id: 'COMMENT_2', content: 'That is awesome', authorId: 'USER_2' },
+  { id: 'COMMENT_3', content: 'Amazing', authorId: 'USER_3' },
 ]
 
 export type User = {
@@ -27,7 +27,7 @@ export type User = {
   name: string
 }
 export const users: User[] = [
-  { id: 'USER_1', name: 'name_1' },
-  { id: 'USER_2', name: 'name_1' },
-  { id: 'USER_3', name: 'name_1' },
+  { id: 'USER_1', name: 'John Does' },
+  { id: 'USER_2', name: 'Eric' },
+  { id: 'USER_3', name: 'Bobby' },
 ]
