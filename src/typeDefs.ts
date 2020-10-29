@@ -11,7 +11,7 @@ export default gql`
 
   type Comment {
     id: ID!
-    author: User!
+    author: User
     content: String!
   }
 
