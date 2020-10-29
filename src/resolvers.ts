@@ -1,14 +1,11 @@
-import { createContext } from "vm";
-import { Context } from "./index";
+import { Context } from "./index"
+import { Resolvers } from './generated/types'
 
-export default {
+const resolvers: Resolvers = {
   Query: {
-    getPosts: (_root: any, _args: any, ctx: Context) => {
+    getPosts: (_root, _args, ctx) => {
       return ctx.posts
     },
-    getPost: (_root: any, { id }: any, ctx: Context) => {
-      return ctx.posts.find(post => post.id === id)
-    }
   },
   Mutation: {
     createPost: (_root: any, { title, content }: any, ctx: Context) => {
@@ -33,3 +30,4 @@ export default {
     }
   }
 }
+export default resolvers

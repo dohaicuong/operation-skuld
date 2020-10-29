@@ -6,7 +6,7 @@ export default gql`
     title: String!
     content: String
     comments: [Comment!]
-    uppercasedTitle: String!
+    uppercasedTitle: String
   }
 
   type Comment {
@@ -21,8 +21,7 @@ export default gql`
   }
 
   type Query {
-    getPosts: [Post!]
-    getPost(id: ID!): Post
+    getPosts(id: ID): [Post!]
   }
 
   type Mutation {

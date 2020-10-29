@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --no-notify src/index.ts"
+    "dev": "ts-node-dev --transpile-only --no-notify src/index.ts",
+    "gen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.19.0",
+    "@graphql-codegen/typescript": "^1.17.11",
+    "@graphql-codegen/typescript-resolvers": "^1.17.10",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.3"
   },
