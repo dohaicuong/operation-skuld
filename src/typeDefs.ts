@@ -2,8 +2,7 @@ import { gql } from 'apollo-server'
 
 export default gql`
   type Query {
-    getPosts: [Post!]
-    getPost(id: ID!): Post
+    getPosts(id: ID): [Post!]
   }
 
   type Post {
