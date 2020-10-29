@@ -63,6 +63,7 @@ export interface NexusGenFieldTypes {
     createPost: NexusGenRootTypes['Post'] | null; // Post
   }
   Post: { // field return type
+    captializedTitle: string; // String!
     comments: Array<NexusGenRootTypes['Comment'] | null> | null; // [Comment]
     content: string | null; // String
     id: string; // String!
@@ -87,6 +88,7 @@ export interface NexusGenFieldTypeNames {
     createPost: 'Post'
   }
   Post: { // field return type name
+    captializedTitle: 'String'
     comments: 'Comment'
     content: 'String'
     id: 'String'

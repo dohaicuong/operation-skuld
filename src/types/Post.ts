@@ -6,6 +6,12 @@ export const Post = objectType({
     t.string('id', { nullable: false })
     t.string('title', { nullable: false })
     t.string('content')
+    t.string('uppercasedTitle', {
+      nullable: false,
+      resolve: post => {
+        return post.title.toLocaleUpperCase()
+      }
+    })
   },
 })
 
