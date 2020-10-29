@@ -23,7 +23,13 @@ export default {
     },
     comments: (root: any, _args: any, ctx: Context) => {
       const commentIds = ctx.posts.find(post => post.id === root.id)?.commentIds
+      console.log(ctx.comments.filter(comment => commentIds?.includes(comment.id)))
       return ctx.comments.filter(comment => commentIds?.includes(comment.id))
+    }
+  },
+  Comment: {
+    author: (root: any, _args: any, ctx: Context) => {
+      
     }
   }
 }
