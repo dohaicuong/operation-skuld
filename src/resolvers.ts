@@ -18,7 +18,7 @@ export default {
     },
   },
   Post: {
-    captializedTitle: (root: any) => {
+    uppercasedTitle: (root: any) => {
       return root.title.toUpperCase()
     },
     comments: (root: any, _args: any, ctx: Context) => {
