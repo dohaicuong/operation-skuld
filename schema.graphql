@@ -2,6 +2,28 @@
 ### Do not make changes to this file directly
 
 
+type Comment {
+  author: User
+  content: String!
+  id: String!
+}
+
+type Mutation {
+  createPost(content: String, title: String!): Post
+}
+
+type Post {
+  comments: [Comment]
+  content: String
+  id: String!
+  title: String!
+}
+
 type Query {
-  ok: Boolean!
+  getPosts(id: ID): [Post]
+}
+
+type User {
+  id: String!
+  name: String!
 }

@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-
+import * as ContextModule from "./src/context"
 
 
 
@@ -28,7 +28,21 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenRootTypes {
+  Comment: { // root type
+    content: string; // String!
+    id: string; // String!
+  }
+  Mutation: {};
+  Post: { // root type
+    content?: string | null; // String
+    id: string; // String!
+    title: string; // String!
+  }
   Query: {};
+  User: { // root type
+    id: string; // String!
+    name: string; // String!
+  }
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
@@ -40,18 +54,65 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
+  Comment: { // field return type
+    author: NexusGenRootTypes['User'] | null; // User
+    content: string; // String!
+    id: string; // String!
+  }
+  Mutation: { // field return type
+    createPost: NexusGenRootTypes['Post'] | null; // Post
+  }
+  Post: { // field return type
+    comments: Array<NexusGenRootTypes['Comment'] | null> | null; // [Comment]
+    content: string | null; // String
+    id: string; // String!
+    title: string; // String!
+  }
   Query: { // field return type
-    ok: boolean; // Boolean!
+    getPosts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
+  }
+  User: { // field return type
+    id: string; // String!
+    name: string; // String!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Comment: { // field return type name
+    author: 'User'
+    content: 'String'
+    id: 'String'
+  }
+  Mutation: { // field return type name
+    createPost: 'Post'
+  }
+  Post: { // field return type name
+    comments: 'Comment'
+    content: 'String'
+    id: 'String'
+    title: 'String'
+  }
   Query: { // field return type name
-    ok: 'Boolean'
+    getPosts: 'Post'
+  }
+  User: { // field return type name
+    id: 'String'
+    name: 'String'
   }
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createPost: { // args
+      content?: string | null; // String
+      title: string; // String!
+    }
+  }
+  Query: {
+    getPosts: { // args
+      id?: string | null; // ID
+    }
+  }
 }
 
 export interface NexusGenAbstractResolveReturnTypes {
@@ -59,7 +120,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Query";
+export type NexusGenObjectNames = "Comment" | "Mutation" | "Post" | "Query" | "User";
 
 export type NexusGenInputNames = never;
 
@@ -72,7 +133,7 @@ export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
 export type NexusGenUnionNames = never;
 
 export interface NexusGenTypes {
-  context: any;
+  context: ContextModule.Context;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   argTypes: NexusGenArgTypes;
