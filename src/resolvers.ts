@@ -20,13 +20,14 @@ const resolvers: Resolvers = {
     },
     comments: (root: any, _args: any, ctx: Context) => {
       const commentIds = ctx.posts.find(post => post.id === root.id)?.commentIds
-      return ctx.comments.filter(comment => commentIds?.includes(comment.id))
+      const comments = ctx.comments.filter(comment => commentIds?.includes(comment.id))
+      return comments
     }
   },
   Comment: {
     author: (root: any, _args: any, ctx: Context) => {
       const authorId = ctx.comments.find(comment => comment.id === root.id)?.authorId
-      return ctx.users.find(user => user.id === authorId)
+      return ctx.users.find(user => user.id === authorId) || null
     }
   }
 }

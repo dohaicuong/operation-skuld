@@ -12,7 +12,7 @@ export default gql`
   type Comment {
     id: ID!
     author: User
-    content: String!
+    content: String
   }
 
   type User {

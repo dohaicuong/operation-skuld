@@ -25,7 +25,7 @@ export type Comment = {
   __typename?: 'Comment';
   id: Scalars['ID'];
   author?: Maybe<User>;
-  content: Scalars['String'];
+  content?: Maybe<Scalars['String']>;
 };
 
 export type User = {
@@ -167,7 +167,7 @@ export type PostResolvers<ContextType = Context, ParentType extends ResolversPar
 export type CommentResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
-  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 

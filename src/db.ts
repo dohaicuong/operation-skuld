@@ -13,7 +13,7 @@ export const posts: Post[] = [
 
 export type Comment = {
   id: string
-  content?: string
+  content: string | null
   authorId: string
 }
 export const comments: Comment[] = [
